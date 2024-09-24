@@ -1,0 +1,294 @@
+@import "_variables.sass"
+
+@font-face 
+    font-family: "Cinzel"
+    src: url("../fonts/Cinzel-Regular.ttf") format("truetype")
+    font-weight: normal
+    font-style: normal
+
+@font-face 
+    font-family: "Cinzel"
+    src: url("../fonts/Cinzel-Bold.ttf") format("truetype")
+    font-weight: bold
+    font-style: normal
+
+html, body 
+    font-family: "Kanit", sans-serif
+    font-size: 15px
+    margin: 0
+    color: $main-text-color
+    background: #0F0F0F
+
+*
+    box-sizing: border-box 
+
+.landing
+    background-image: url("../images/bg1.png")
+    background-size: 100%
+    background-position: center
+    width: 100%
+    flex-direction: column
+    border-bottom: 1px solid #516079
+    box-shadow: 0px -50px 100px rgb(0, 0, 0.5) inset
+        
+    .inner-container
+        width: 75%
+        margin: 0 auto 
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        padding: 24px 0
+
+        .join-discord
+            background: linear-gradient(-90deg, #809cfd 0%, #4e60a0 100%)
+            display: flex
+            padding: 4px
+            border-radius: 100px
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+            transition: all 0.2s ease
+            grid-column: span 1
+            height: fit-content
+            width: fit-content
+            margin-left: auto
+
+            &:hover
+                filter: saturate(1.25)
+
+            a
+                padding: 8px 24px
+                background: linear-gradient(180deg, #7289da 0%, #475895 100%)
+                border-radius: 100px
+                text-decoration: none
+                font-weight: bold
+                color: #FFF
+                text-shadow: 1px 1px 1px #3d476d
+                display: flex
+                align-items: center
+                gap: 6px
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25)
+
+        .banner
+            display: flex
+            grid-column: span 2
+
+            img
+                width: 150px
+        
+        .join-now
+            width: 50%
+            grid-column: span 2
+            margin: 24px 0
+
+            .info
+                color: $landing-body-text-color
+                margin: 24px 0
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5)
+                display: flex
+
+            .introduction
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+
+                h1
+                    color: #FFF
+                    text-transform: uppercase
+                    margin: 0
+
+                    .magical
+                        background:  linear-gradient(to bottom, rgba(249, 232, 23, 1), rgba(148, 77, 0, 1))
+                        -webkit-background-clip: text
+                        background-clip: text
+                        -webkit-text-fill-color: transparent
+                        text-shadow: 0 0 24px #ffd70078
+                        font-size: 1.5em
+                
+                h2
+                    color: #FFF
+                    text-transform: uppercase
+                    text-align: center
+                    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5)
+                    margin: 0
+            
+            .how-to-play-btn
+                background: $btn-container-bg-color-fallback
+                background: $btn-container-bg-color
+                color: $btn-text-color
+                text-decoration: none
+                font-weight: bold
+                padding: 10px 40px
+                border-radius: 100px
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5)
+                transition: all 0.2s ease
+                display: flex
+                width: fit-content
+
+                &:hover
+                    filter: saturate(1.25)
+
+                .btn
+                    margin: -6px -36px
+                    padding: 10px 40px
+                    display: flex
+                    gap: 6px
+                    border-radius: 100px
+                    background: $btn-linear-bg-fallback
+                    background: $btn-linear-bg
+                    box-shadow: 0 2px 4px $btn-border-color
+                    text-shadow: 1px 1px 1px rgb(200, 180, 80)
+                    display: flex
+                    align-items: center
+
+
+.menu-container
+    width: 100%
+    margin: 0 auto
+    display: flex 
+    padding: 6px 0
+    background: #232D3F
+    box-shadow: 0 3px 12px 0px black
+
+    .menu
+        display: flex
+        width: 75%
+        margin: 0 auto
+
+        .logo
+            img
+                width: 70px
+
+        ul
+            list-style-type: none
+            padding: 0
+            margin: 0 24px
+            display: flex
+            align-items: center
+
+            li
+                padding: 6px 12px 
+
+                &.has-dropdown
+                    position: relative 
+
+                    &:hover
+                        ul.dropdown
+                            opacity: 1
+                            visibility: visible
+
+                    ul.dropdown
+                        position: absolute
+                        background: #151515
+                        width: 250px
+                        left: -12px
+                        border-radius: 6px
+                        box-shadow: 0 0 6px rgba(0, 0, 0, 0.5)
+                        flex-direction: column
+                        align-items: flex-start
+                        opacity: 0
+                        visibility: collapse
+                        transition: all 0.2s ease
+
+                        li
+                            padding: 0
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.04)
+                            width: 100%
+
+                            &:last-child
+                                border: none
+
+                            a
+                                color: gray
+                                font-weight: normal
+                                text-transform: none
+                                padding: 12px 12px
+                                transition: all 0.2s ease
+
+                                &:hover
+                                    color: silver
+
+                a 
+                    padding: 6px 12px
+                    color: $menu-link-text-color
+                    text-decoration: none
+                    font-weight: bold
+                    text-transform: uppercase
+                    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5)
+                    display: flex
+                    gap: 6px
+                    align-items: center
+                    transition: all 0.2s ease
+                    border-radius: 4px
+
+                    &:hover
+                        background-color: rgba(0, 0, 0, 0.15)
+                        color: lighten($menu-link-text-color, 10%)
+
+.features
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    padding: 24px
+    gap: 24px
+    margin-top: auto
+
+    .feature
+        .header
+            background: #131313
+            border-radius: 100px
+            padding: 3px 48px
+            text-align: center
+            margin: 0 auto -12px
+            z-index: 1
+            position: relative
+            color: #FFF
+            font-weight: bold
+            text-transform: uppercase
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3)
+            width: 50%
+
+        .image
+            height: 200px
+            width: 100%
+
+            img
+                height: 100%
+                width: 100%
+                border-radius: 6px 6px 0 0
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5)
+        
+        .info
+            background: #131313
+            border-radius: 0 0 6px 6px
+            color: #FFF
+            padding: 12px
+
+.icon
+    height: 15px
+    width: 15px
+    display: inline-block
+    background-size: 100% 
+    background-position: center
+    background-repeat: no-repeat
+
+.icon-home
+    background-image: url("../images/icons/home.svg")
+
+.icon-forum
+    background-image: url("../images/icons/forum.svg")
+
+.icon-client
+    background-image: url("../images/icons/rocket.svg") 
+
+.icon-panel
+    background-image: url("../images/icons/panel.svg")
+
+.icon-discord
+    background-image: url("../images/icons/discord.svg")
+
+.icon-book
+    background-image: url("../images/icons/book.png")
+
+.icon-book
+    background-image: url("../images/icons/book.svg")
+
+.icon-caret-down
+    background-image: url("../images/icons/caret-down.svg")
+
